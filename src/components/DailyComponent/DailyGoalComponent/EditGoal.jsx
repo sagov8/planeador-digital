@@ -2,13 +2,12 @@ import { EditablePreview, useColorModeValue, IconButton, Input, useEditableContr
 import { CheckIcon, CloseIcon } from "@chakra-ui/icons";
 
 export default function EditGoal() {
-  /* Here's a custom control */
+  
   function EditableControls() {
     const {
       isEditing,
       getSubmitButtonProps,
       getCancelButtonProps,
-      getEditButtonProps
     } = useEditableControls();
 
     return isEditing ? (
