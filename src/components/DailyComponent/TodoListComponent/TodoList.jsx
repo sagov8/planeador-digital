@@ -77,7 +77,7 @@ export function TodoList() {
   
 
   return (
-    <Card maxW="sm" display='flex'>
+    <Card display='flex'>
       <CardBody>
         <VStack p={4} minH="20vh" pb={2}>
           <Heading

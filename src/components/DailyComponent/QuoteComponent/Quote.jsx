@@ -2,6 +2,7 @@ import {
   Card,
   CardBody,
   Stack,
+  VStack,
   Heading,
   Icon,
   Text,
@@ -22,9 +23,9 @@ export function Quote(props) {
   }, []);
 
   return (
-    <Card maxW="sm">
+    <Card>
       <CardBody>
-        <Stack spacing="3">
+        <VStack spacing="3">
           <Stack isInline align='baseline'>
             <Heading
               p="3"
@@ -46,7 +47,7 @@ export function Quote(props) {
           <Text as='b' fontSize='sm' letterSpacing='widest'>
             {autor}
           </Text>
-        </Stack>
+        </VStack>
       </CardBody>
     </Card>
   );

@@ -11,7 +11,7 @@ import EditGoal from "./EditGoal";
 
 export function DailyTarget() {
   return (
-    <Card maxW="sm">
+    <Card>
       <CardBody>
         <CardHeader>
           <Center>

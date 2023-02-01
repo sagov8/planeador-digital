@@ -2,21 +2,28 @@ import {
   Card,
   CardBody,
   Text,
-  Center,
   Button,
   Heading,
+  VStack,
 } from "@chakra-ui/react";
-import EmojiPicker from "emoji-picker-react";
+import EmojiPicker, { Categories } from "emoji-picker-react";
 import { useState } from "react";
 
 export function EmojiSelector() {
-    const [isPickerVisible, setPickerVisible] = useState(false);
-    const [currentEmoji, setCurrentEmoji] = useState();
+  const [isPickerVisible, setPickerVisible] = useState(false);
+  const [currentEmoji, setCurrentEmoji] = useState();
+
+  const categories = [
+    {
+      name: "Smiles & Emotions",
+      category: Categories.SMILEYS_PEOPLE,
+    },
+  ];
 
   return (
-    <Card maxW="sm" display="flex" mt={3}>
+    <Card display="flex">
       <CardBody>
-        <Center>
+        <VStack>
           <Heading
             p="3"
             fontWeight="extrabold"
@@ -26,21 +33,31 @@ export function EmojiSelector() {
           >
             Mood del día
           </Heading>
-        </Center>
 
-        <Center>
-          <Text fontSize={45}>{currentEmoji}</Text>
-        </Center>
-        <Center>
-          <Button colorScheme="green" my={4} onClick={() => setPickerVisible(!isPickerVisible)}>
+          <Text fontSize={60}>{currentEmoji}</Text>
+
+          <Button
+            colorScheme="green"
+            my={4}
+            onClick={() => setPickerVisible(!isPickerVisible)}
+          >
             Seleccionar Emoji
           </Button>
-        </Center>
-        {isPickerVisible ? <EmojiPicker onEmojiClick={(e) => {
-            setCurrentEmoji(e.emoji);
-            setPickerVisible(!isPickerVisible);
-        }} height={400} width={350} /> : ''}
-        
+
+          {isPickerVisible ? (
+            <EmojiPicker
+              onEmojiClick={(e) => {
+                setCurrentEmoji(e.emoji);
+                setPickerVisible(!isPickerVisible);
+                console.log(e);
+              }}
+              categories={categories}
+              theme='auto'
+            />
+          ) : (
+            ""
+          )}
+        </VStack>
       </CardBody>
     </Card>
   );

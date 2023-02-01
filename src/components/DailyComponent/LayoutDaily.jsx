@@ -1,4 +1,4 @@
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, SimpleGrid } from "@chakra-ui/react";
 import { DailyTarget } from "./DailyGoalComponent/DailyGoal";
 import { TodoList } from "./TodoListComponent/TodoList";
 import { WaterGlasses } from "./WaterGlassesComponent/WaterGlasses";
@@ -7,26 +7,12 @@ import { EmojiSelector } from "./EmojiSelectorComponent/EmojiSelector";
 
 export function LayoutDaily() {
   return (
-    <Grid
-      templateRows='repeat(2,1fr)'
-      templateColumns="repeat(4, 1fr)"
-      
-    >
-      <GridItem>
+    <SimpleGrid columns={{base: 1, lg: 2, xl:3}} spacing={{base: 20, lg: 18, xl:10}}>
         <DailyTarget />
-      </GridItem>
-      <GridItem>
         <TodoList />
-      </GridItem>
-      <GridItem>
-        <WaterGlasses />
-      </GridItem>
-      <GridItem>
         <Quote />
-      </GridItem>
-      <GridItem>
+        <WaterGlasses />
         <EmojiSelector />
-      </GridItem>
-    </Grid>
+    </SimpleGrid>
   );
 }

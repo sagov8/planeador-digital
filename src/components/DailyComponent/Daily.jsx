@@ -1,12 +1,14 @@
-import { Center, Heading, Stack } from "@chakra-ui/react";
+import { Center, Flex, Heading, VStack } from "@chakra-ui/react";
 import { DateDaily } from "../../utils/DateDaily";
 import { LayoutDaily } from "./LayoutDaily";
 
 export function Daily() {
   return (
-    <Stack spacing={4}>
-      <DateDaily />
-      <Center>
+    <>
+      <Flex justifyContent="end">
+        <DateDaily />
+      </Flex>
+      <VStack spacing={3}>
         <Heading
           p="5"
           fontWeight="extrabold"
@@ -16,8 +18,8 @@ export function Daily() {
         >
           ¡Planifica tu día para ser productivo!
         </Heading>
-      </Center>
-      <LayoutDaily />
-    </Stack>
+        <LayoutDaily />
+      </VStack>
+    </>
   );
 }

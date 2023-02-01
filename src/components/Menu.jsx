@@ -15,7 +15,7 @@ export function Menu() {
   return (
     <>
       <Tabs isFitted variant="soft-rounded" colorScheme="green" ml='3em' mr='3em'>
-        <TabList mb="1em">
+        <TabList>
           <Tab>
             <Text as="b">Diario</Text>
           </Tab>

@@ -1,5 +1,14 @@
-import { useState} from "react";
-import { Link, Box, Flex, Text, Button, Stack, useColorMode, IconButton } from "@chakra-ui/react";
+import { useState } from "react";
+import {
+  Link,
+  Box,
+  Flex,
+  Text,
+  Button,
+  Stack,
+  useColorMode,
+  IconButton,
+} from "@chakra-ui/react";
 import Logo from "./Logo";
 import { FaSun, FaMoon } from "react-icons/fa";
 
@@ -10,10 +19,7 @@ const NavBar = (props) => {
 
   return (
     <NavBarContainer {...props}>
-      <Logo
-        w="10em"
-        color={["black", "black", "primary.500", "primary.500"]}
-      />
+      <Logo w="10em" color={["black", "black", "primary.500", "primary.500"]} />
       <MenuLinks isOpen={isOpen} />
     </NavBarContainer>
   );
@@ -28,8 +34,6 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
     </Link>
   );
 };
-
-
 
 const MenuLinks = ({ isOpen }) => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -47,12 +51,12 @@ const MenuLinks = ({ isOpen }) => {
         pt={[4, 4, 0, 0]}
       >
         <IconButton
-            icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
-            isRound="true"
-            size="md"
-            alignSelf="flex-end"
-            onClick={toggleColorMode}
-          />
+          icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
+          isRound="true"
+          size="md"
+          alignSelf="flex-end"
+          onClick={toggleColorMode}
+        />
         <MenuItem to="/signup" isLast>
           <Button
             size="sm"
@@ -60,7 +64,7 @@ const MenuLinks = ({ isOpen }) => {
             color={["primary.500", "primary.500", "white", "white"]}
             bg={["black", "black", "primary.500", "primary.500"]}
             _hover={{
-              bg: ["primary.100", "primary.100", "primary.600", "primary.600"]
+              bg: ["primary.100", "primary.100", "primary.600", "primary.600"],
             }}
           >
             Create Account

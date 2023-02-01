@@ -2,15 +2,13 @@ import React from "react";
 import { Box, Stack, Text, Icon } from "@chakra-ui/react";
 import { GiPerspectiveDiceSixFacesRandom } from 'react-icons/gi'
 
-export default function Logo(props) {
+export default function Logo() {
   return (
-    <Stack isInline>
-      <Box {...props}>
-        <Text fontSize="md" fontWeight="bold" letterSpacing={3}>
-          Random Company
+    <Stack isInline align='baseline'>
+        <Text fontSize="md" fontWeight="bold" letterSpacing={2}>
+          Random Company Inc.
         </Text>
-        <Icon as={GiPerspectiveDiceSixFacesRandom} boxSize={7}/>
-      </Box>
+        <Icon as={GiPerspectiveDiceSixFacesRandom} boxSize={4} />
     </Stack>
   );
 }
