@@ -22,10 +22,9 @@ import {
     return (
         <>
             <Button
-                colorScheme='gray'
+                colorScheme='red'
                 px='8'
                 h='45'
-                color='gray.500'
                 mt='8'
                 onClick={onOpen}
                 >

@@ -11,7 +11,7 @@ export function Daily() {
           p="5"
           fontWeight="extrabold"
           size="xl"
-          bgGradient="linear(to-l, primary.700, primary.300)"
+          bgGradient="linear(to-r, primary.200, primary.500)"
           bgClip="text"
         >
           ¡Planifica tu día para ser productivo!

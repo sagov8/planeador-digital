@@ -6,7 +6,7 @@ import {
   Heading,
   CardHeader,
 } from "@chakra-ui/react";
-import EditTarget from "./EditGoal";
+import EditGoal from "./EditGoal";
 
 export function DailyTarget() {
   return (
@@ -15,21 +15,21 @@ export function DailyTarget() {
         <CardHeader>
           <Heading
             p="0"
-            fontWeight="extrabold"
+            fontWeight="bold"
             size="xl"
             bgGradient="linear(to-r, primary.200, primary.500)"
             bgClip="text"
           >
-            Daily Goal
+            Objetivo del día
           </Heading>
         </CardHeader>
         <Image
-          src="https://images.pexels.com/photos/7581118/pexels-photo-7581118.jpeg?auto=compress&cs=tinysrgb&w=1600"
-          alt="Green double couch with wooden legs"
+          src="https://cdn.elearningindustry.com/wp-content/uploads/2020/01/5-tips-for-settting-up-smart-training-goals.jpg"
+          alt="Daily Goal"
           borderRadius="lg"
         />
         <Stack mt="6" spacing="3">
-          <EditTarget />
+          <EditGoal />
         </Stack>
       </CardBody>
     </Card>

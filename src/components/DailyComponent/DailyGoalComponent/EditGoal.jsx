@@ -1,7 +1,7 @@
-import { EditablePreview, Box, useColorModeValue, IconButton, Input, useDisclosure, useEditableControls, ButtonGroup, SlideFade, Editable, Tooltip, EditableInput } from "@chakra-ui/react";
+import { EditablePreview, useColorModeValue, IconButton, Input, useEditableControls, ButtonGroup, Editable, Tooltip, EditableInput } from "@chakra-ui/react";
 import { CheckIcon, CloseIcon } from "@chakra-ui/icons";
 
-export function EditTarget() {
+export default function EditGoal() {
   /* Here's a custom control */
   function EditableControls() {
     const {
@@ -27,6 +27,7 @@ export function EditTarget() {
         placeholder="Escribe aquí el objetivo del día de hoy"
         isPreviewFocusable={true}
         selectAllOnFocus={false}
+        letterSpacing='wide'
       >
         <Tooltip label="Click to edit">
           <EditablePreview

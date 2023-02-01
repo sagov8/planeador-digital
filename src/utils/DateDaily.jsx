@@ -6,7 +6,7 @@ export function DateDaily() {
   const [date, setDate] = useState();
 
   const currentDate = () => {
-    return dayjs().locale("es").format("D MMMM YYYY - HH:mm:ss");
+    return dayjs().locale("es").format("D MMMM YYYY - HH:mm a");
   };
 
   function refreshClock() {
@@ -21,7 +21,7 @@ export function DateDaily() {
   }, []);
 
   return (
-    <Text as="b" fontSize="15px">
+    <Text as="h3" fontWeight='500' letterSpacing={'wide'}>
       {date}
     </Text>
   );
