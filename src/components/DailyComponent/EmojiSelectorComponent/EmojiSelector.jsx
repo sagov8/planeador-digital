@@ -5,13 +5,15 @@ import {
   Button,
   Heading,
   VStack,
+  useColorMode
 } from "@chakra-ui/react";
-import EmojiPicker, { Categories } from "emoji-picker-react";
+import EmojiPicker, { Categories, Theme }  from "emoji-picker-react";
 import { useState } from "react";
 
 export function EmojiSelector() {
   const [isPickerVisible, setPickerVisible] = useState(false);
   const [currentEmoji, setCurrentEmoji] = useState();
+  const { colorMode } = useColorMode();
 
   const categories = [
     {
@@ -23,7 +25,7 @@ export function EmojiSelector() {
   return (
     <Card display="flex">
       <CardBody>
-        <VStack>
+        <VStack spacing={2}>
           <Heading
             p="3"
             fontWeight="extrabold"
@@ -38,7 +40,6 @@ export function EmojiSelector() {
 
           <Button
             colorScheme="green"
-            my={4}
             onClick={() => setPickerVisible(!isPickerVisible)}
           >
             Seleccionar Emoji
@@ -46,13 +47,14 @@ export function EmojiSelector() {
 
           {isPickerVisible ? (
             <EmojiPicker
+              theme={colorMode === 'light' ? Theme.LIGHT : Theme.DARK}
               onEmojiClick={(e) => {
                 setCurrentEmoji(e.emoji);
                 setPickerVisible(!isPickerVisible);
                 console.log(e);
               }}
               categories={categories}
-              theme='auto'
+              width="100%"
             />
           ) : (
             ""

@@ -27,6 +27,8 @@ export default function EditGoal() {
         isPreviewFocusable={true}
         selectAllOnFocus={false}
         letterSpacing='wide'
+        fontFamily='Verdana'
+        fontSize='xl'
       >
         <Tooltip label="Click to edit">
           <EditablePreview

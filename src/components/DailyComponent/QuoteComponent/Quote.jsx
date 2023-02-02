@@ -7,7 +7,7 @@ import {
   Icon,
   Text,
   Divider,
-  Box,
+  Box
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import * as API from "../../../services/QuoteService";
@@ -25,8 +25,8 @@ export function Quote(props) {
   return (
     <Card>
       <CardBody>
-        <VStack spacing="3">
-          <Stack isInline align='baseline'>
+        <VStack spacing="12">
+          <Stack isInline align="baseline">
             <Heading
               p="3"
               fontWeight="extrabold"
@@ -40,13 +40,15 @@ export function Quote(props) {
               <Icon as={BsFillChatQuoteFill} boxSize={7} color="primary.300" />
             </Box>
           </Stack>
-          <Text as='cite' fontSize='xl'>
-            "{quote}"
-          </Text>
-          <Divider />
-          <Text as='b' fontSize='sm' letterSpacing='widest'>
-            {autor}
-          </Text>
+          <VStack spacing={10}>
+            <Text as="cite" fontSize="xl">
+              "{quote}"
+            </Text>
+            <Divider />
+            <Text as="b" fontSize="sm" letterSpacing="widest">
+              {autor}
+            </Text>
+          </VStack>
         </VStack>
       </CardBody>
     </Card>

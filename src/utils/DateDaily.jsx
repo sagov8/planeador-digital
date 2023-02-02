@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { Box, Text, Badge } from "@chakra-ui/react";
+import { Text, Badge } from "@chakra-ui/react";
 import dayjs from "dayjs";
 
 export function DateDaily() {
   const [date, setDate] = useState();
 
   const currentDate = () => {
-    return dayjs().locale("es").format("D MMM YY - HH:mm a");
+    return dayjs().locale("es").format("dddd - D MMM YY - HH:mm a");
   };
 
   function refreshClock() {

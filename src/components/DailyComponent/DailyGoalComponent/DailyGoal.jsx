@@ -32,7 +32,9 @@ export function DailyTarget() {
           borderRadius="lg"
         />
         <Stack mt="6" spacing="3">
-          <EditGoal />
+          <Center>
+            <EditGoal />
+          </Center>
         </Stack>
       </CardBody>
     </Card>

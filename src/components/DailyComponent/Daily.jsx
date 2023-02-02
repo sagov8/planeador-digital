@@ -1,4 +1,4 @@
-import { Center, Flex, Heading, VStack } from "@chakra-ui/react";
+import { Flex, Heading, VStack } from "@chakra-ui/react";
 import { DateDaily } from "../../utils/DateDaily";
 import { LayoutDaily } from "./LayoutDaily";
 
