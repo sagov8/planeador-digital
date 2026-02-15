@@ -6,7 +6,7 @@ import { FaSun, FaMoon } from "react-icons/fa";
 export function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
-
+  
   return (
     <Center>
       <Flex w="100%" my={5}>
