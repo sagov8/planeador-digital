@@ -68,7 +68,7 @@ const getWeeksInMonth = (year, monthIndex) => {
     return weeks;
 };
 
-export function Weekly() {
+export function Weekly({ externalYear, externalMonth, externalWeek }) {
     const [tasks, setTasks] = useState(() => {
         const saved = localStorage.getItem("weeklyTasksV2");
         return saved ? JSON.parse(saved) : {};
@@ -94,6 +94,16 @@ export function Weekly() {
         // For now, simpler to just default to 0 when changing month
         setSelectedWeekIndex(0);
     }, [currentYear, selectedMonth]);
+
+    // Sync with external props when they change (navigation from Monthly view)
+    useEffect(() => {
+        if (externalYear !== undefined && externalMonth !== undefined) {
+            setCurrentYear(externalYear);
+            setSelectedMonth(externalMonth);
+            // Default to 0 if externalWeek is undefined, but if passed use it
+            setSelectedWeekIndex(externalWeek || 0);
+        }
+    }, [externalYear, externalMonth, externalWeek]);
 
     // Determine the 7 days to display based on selected week
     const currentWeekStart = weeks[selectedWeekIndex];
